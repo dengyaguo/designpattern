@@ -1,4 +1,4 @@
-package com.designpattern.behaviorpattern.myobserver;
+package com.designpattern.behaviorpattern.observer;
 
 /**
  * 模拟微信用户表

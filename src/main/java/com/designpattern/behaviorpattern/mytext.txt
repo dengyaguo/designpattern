@@ -5,7 +5,6 @@ Iterator (迭代器模式) //顺序访问集合对象的元素
 Mediator (中介者模式)//相当于观察者模式的升级
 Memento ( 备忘录模式 )//相当于备份
 State (状态模式)//if else或switch case 的封装
-Strategy (策略模式)//经常和适配器模式连用
 TemplateMethod (模板方法)//抽象类定义行为，子类可以重写，也可以直接调用
 
 //有代码实践的设计模式
@@ -13,3 +12,4 @@ Observer (观察者模式 )
 Visitor (访问者模式 )
 Chain of Responsibility ( 责任链模式 )
 Command (命令模式)
+Strategy (策略模式)//经常和适配器模式连用
