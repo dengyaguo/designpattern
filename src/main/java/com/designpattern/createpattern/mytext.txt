@@ -1,0 +1,5 @@
+AbstractFactory (抽象工厂)
+FactoryMethod (工厂方法)
+Singleton (单态模式)
+Builder(建造者模式)
+Prototype(原型模式)
