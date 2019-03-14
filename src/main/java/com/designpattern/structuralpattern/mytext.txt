@@ -1,7 +1,10 @@
-Adapter * 适配器模式 *
-Bridge ( 桥接模* )
+Adapter (适配器模式)
+Bridge ( 桥接模式 )
 Composite ( 组合模式 )
-Decorator ( 装*模式 )
+Decorator ( 装饰模式 )
 Facade ( 外观模式 )
 Flyweight ( 享元模式 )
 Proxy ( 代理模式 )
+
+
+//spring 中用的比较多的delegate  委派模式
