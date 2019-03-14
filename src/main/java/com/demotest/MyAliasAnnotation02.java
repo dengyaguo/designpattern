@@ -1,4 +1,4 @@
-package com.designpattern.structuralpattern.DemoTest;
+package com.demotest;
 
 
 import org.springframework.core.annotation.AliasFor;
@@ -10,8 +10,9 @@ import java.lang.annotation.Target;
 
 //定义注解
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-public @interface MyAliasAnnotation01 {
+@Target({ElementType.METHOD,ElementType.TYPE})
+public @interface MyAliasAnnotation02
+{
 
     @AliasFor(value = "location")
     String value() default "";
