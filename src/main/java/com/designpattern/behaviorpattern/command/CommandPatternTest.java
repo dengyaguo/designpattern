@@ -14,6 +14,7 @@ public class CommandPatternTest {
         Command command = new CookCommand(chef);
         Customer customer = new Customer();
         customer.addCommand(command);
+        //顾客点餐前还可以添加  服务员端茶倒水的命令等其他命令，命令之间没有绝对的顺序
         customer.orderDishes();
 
     }

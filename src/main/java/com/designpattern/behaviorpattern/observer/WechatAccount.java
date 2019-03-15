@@ -1,5 +1,9 @@
 package com.designpattern.behaviorpattern.observer;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
+import javax.xml.bind.SchemaOutputResolver;
+
 /**
  * 模拟微信用户表
  */
@@ -42,10 +46,12 @@ public class WechatAccount implements ObserverBehavior{
 
     @Override
     public void update(String message) {
-        read();
+        read(message);
     }
 
-    public void read() {
+    public void read(String message) {
+
         System.out.println(name + " 收到推送消息： " + this.toString());
+        System.out.println(message);
     }
 }

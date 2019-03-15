@@ -1,5 +1,7 @@
 package com.designpattern.behaviorpattern.visitor;
 
 public interface Visitor {
-    void visit(Visitor visitor);
+
+    void visitA(Element element);
+    void visitB(Element element);
 }
