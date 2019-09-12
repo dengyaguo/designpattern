@@ -13,3 +13,7 @@ Chain of Responsibility ( 责任链模式 )
 Command (命令模式)
 Strategy (策略模式)
 TemplateMethod (模板方法)
+
+
+
+我的天
