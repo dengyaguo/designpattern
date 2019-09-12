@@ -8,3 +8,4 @@ Proxy ( 代理模式 )
 
 
 //spring 中用的比较多的delegate  委派模式
+text  wiki
