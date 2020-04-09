@@ -1,4 +1,4 @@
-package com.hutool.entity;
+package com.entity;
 
 import java.time.LocalDateTime;
 

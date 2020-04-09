@@ -25,15 +25,12 @@ public class GuavaFuture {
             }
         });
         // 注册监听器,即异步调用完成时会在指定的线程池中执行注册的监听器
-        listenableFuture.addListener(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    listenableFuture.get();
-                    System.out.println("[ListenableFuture.get()结束时间：]----->>>>>" + (System.currentTimeMillis() - timeMillis));
-                } catch (Exception e) {
+        listenableFuture.addListener(() -> {
+            try {
+                listenableFuture.get();
+                System.out.println("[ListenableFuture.get()结束时间：]----->>>>>" + (System.currentTimeMillis() - timeMillis));
+            } catch (Exception e) {
 
-                }
             }
         }, Executors.newSingleThreadExecutor());
         // 主线程可以继续执行,异步完成后会执行注册的监听器任务.
