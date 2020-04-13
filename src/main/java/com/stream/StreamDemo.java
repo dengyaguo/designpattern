@@ -5,8 +5,6 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.*;
 
 public class StreamDemo {
 
@@ -27,18 +25,18 @@ public class StreamDemo {
 
         //根据字段去重
         ArrayList<User> collect2 = userList.stream().collect(
-                collectingAndThen(toCollection(() -> new TreeSet<>(
-                        comparing(user -> user.getName() + user.getGender()))), ArrayList::new));
+                Collectors.collectingAndThen(  Collectors.toCollection(() -> new TreeSet<>(
+                        Comparator.comparing(user -> user.getName() + user.getGender()))), ArrayList::new));
 
         //求和
         Map<String, Integer> collect3 = userList.stream()
                 //.filter(user -> "男".equals(user.getGender()))
-                .collect(groupingBy(User::getGender,reducing(0, User::getAge, Integer::sum)));
+                .collect(  Collectors.groupingBy(User::getGender,  Collectors.reducing(0, User::getAge, Integer::sum)));
 
        //分组后去重
         Map<String, Set<String>> namesByCity
-                = userList.stream().collect(groupingBy(User::getGender,
-                mapping(User::getName, toSet())));
+                = userList.stream().collect(  Collectors.groupingBy(User::getGender,
+                Collectors.mapping(User::getName,   Collectors.toSet())));
 
 
     }
