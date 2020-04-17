@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 public class StreamDemo {
 
     public static void main(String[] args) {
+
         User user3 = new User("anni+3",3, LocalDateTime.now().minusDays(3));
         User user5 = new User("anni+3",5, LocalDateTime.now().minusDays(5));
         User user1 = new User("anni+1",1, LocalDateTime.now().minusDays(1));
