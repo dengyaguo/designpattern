@@ -1,8 +1,10 @@
 package com.stream;
 
+import com.alibaba.fastjson.JSON;
 import com.entity.User;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -31,13 +33,18 @@ public class StreamDemo {
 
         //求和
         Map<String, Integer> collect3 = userList.stream()
-                //.filter(user -> "男".equals(user.getGender()))
+                .filter(user -> "男".equals(user.getGender()))
                 .collect(  Collectors.groupingBy(User::getGender,  Collectors.reducing(0, User::getAge, Integer::sum)));
 
        //分组后去重
         Map<String, Set<String>> namesByCity
                 = userList.stream().collect(  Collectors.groupingBy(User::getGender,
                 Collectors.mapping(User::getName,   Collectors.toSet())));
+      //分组取最大
+        Comparator<User> userComparator = Comparator.comparingInt(User::getAge);
+        Map<String, Optional<User>> collect = userList.stream().collect(Collectors.groupingBy(User::getName, Collectors.reducing(BinaryOperator.maxBy(userComparator))));
+        JSON.toJSONString(collect);
+
 
 
     }

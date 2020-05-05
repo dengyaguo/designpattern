@@ -1,5 +1,4 @@
-package com.stream;
-
+package com.entity;
 public class WaybillDto {
 
     public WaybillDto() {
