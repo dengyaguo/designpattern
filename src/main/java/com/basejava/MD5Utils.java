@@ -1,8 +1,12 @@
 package com.basejava;
 
+import com.alibaba.fastjson.JSON;
+
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.*;
+import java.util.Date;
 
 public class MD5Utils {
 
@@ -44,7 +48,15 @@ public class MD5Utils {
     }
 
     public static void main(String[] args) {
-        System.err.println(MD5Utils.getMD5Str(""));
+        Date date = new Date();
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(date.getTime()), ZoneId.systemDefault());
+        LocalDateTime min = LocalDateTime.of( LocalDateTime.now().toLocalDate(), LocalTime.MIN);
+        LocalDateTime max = LocalDateTime.of( LocalDateTime.now().toLocalDate(), LocalTime.MAX);
+
+
+        System.out.println(JSON.toJSONString(localDateTime.with( LocalTime.MIN)));
+        System.out.println(JSON.toJSONString(localDateTime.with( LocalTime.MAX)));
+        System.err.println(MD5Utils.getMD5Str("JT995913"));
     }
 
 }

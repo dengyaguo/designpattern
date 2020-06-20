@@ -18,6 +18,8 @@ public class StreamDemo {
         User user4 = new User("anni+4",4, LocalDateTime.now().minusDays(4));
         User user2 = new User("anni+2",2, LocalDateTime.now().minusDays(2));
         List<User> userList = Arrays.asList(user3, user1, user2, user4, user5);
+        List<User> collect4 = userList.stream().filter(user -> user.getAge().equals(6)).collect(Collectors.toList());
+        Optional.of(collect4).ifPresent(users -> System.out.println(JSON.toJSONString(collect4)));
 
         //排序
         userList.sort(Comparator.comparing(User::getCreateTime).reversed());
