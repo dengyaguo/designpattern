@@ -26,7 +26,7 @@ public class QueueTest {
         arrayBlockingQueue.take();
 
 
-        LinkedBlockingDeque<Object> linkedBlockingDeque = new LinkedBlockingDeque<>(10);
+        LinkedBlockingDeque<String> linkedBlockingDeque = new LinkedBlockingDeque<>(10);
         linkedBlockingDeque.put("");
         linkedBlockingDeque.take();
     }

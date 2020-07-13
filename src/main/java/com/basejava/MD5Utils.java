@@ -56,7 +56,7 @@ public class MD5Utils {
 
         System.out.println(JSON.toJSONString(localDateTime.with( LocalTime.MIN)));
         System.out.println(JSON.toJSONString(localDateTime.with( LocalTime.MAX)));
-        System.err.println(MD5Utils.getMD5Str("JT995913"));
+        System.err.println(MD5Utils.getMD5Str("aa123456"));
     }
 
 }

@@ -1,5 +1,7 @@
 package com.util;
 
+import java.util.ArrayList;
+
 public class DemoVo<T,V> {
     public DemoVo() {
     }
@@ -32,5 +34,8 @@ public class DemoVo<T,V> {
         DemoVo<Object, Object> vo = new DemoVo<>("KEY", "VALUE");
         Object key = vo.getKey();
         Object value = vo.getValue();
+
+        ArrayList<Object> objects = new ArrayList<>();
+        objects.add(null);
     }
 }

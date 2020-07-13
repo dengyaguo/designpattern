@@ -1,6 +1,5 @@
 package com.executor;
 
-import java.time.LocalDateTime;
 import java.util.concurrent.*;
 
 /**
@@ -18,17 +17,19 @@ import java.util.concurrent.*;
  * 线程池
  */
 public class ThreadPoolExecutorTest {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
         ThreadPoolExecutor executor = new ThreadPoolExecutor(4, 4,
                 0L, TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<>());
         Future<String> submit = executor.submit(() -> "game over");
         executor.execute(() -> System.out.println("game over"));
+        submit.get();
 
         long l = System.currentTimeMillis();
         Thread.sleep(1000);
         long l1 = System.currentTimeMillis();
         System.out.println(l1-l);
+
     }
 
 
