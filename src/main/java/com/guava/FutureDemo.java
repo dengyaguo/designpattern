@@ -6,12 +6,15 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class GuavaFuture {
+public class FutureDemo {
 
     public static void main(String[] args) throws Exception {
         //guavaFuture();
 
-        guavaFuture2();
+        //guavaFuture2();
+
+        Callable callable = ()->{return  "123";};
+        Object call = callable.call();
     }
 
 

@@ -80,13 +80,24 @@ public class Student {
         }
 
         public Student build() {
-            return new Student(target);
+            return target;
         }
 
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", passwd='" + passwd + '\'' +
+                ", sex='" + sex + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
     public static void main(String[] args) {
-        Student s=new Student.Builder().name("CC").password("qwerty").sex("男").address("银河系-三体").build();
-        new Student.Builder();
+        Student s= new Builder().name("CC").password("qwerty").sex("男").address("银河系-三体").build();
+        System.out.println(s.toString());
     }
 }

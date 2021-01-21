@@ -3,6 +3,8 @@ package com.designpattern.createpattern.prototype;
 import java.io.*;
 
 public class Student implements Serializable,Cloneable {
+
+    private static final long serialVersionUID = 8703027563434375744L;
     public Student( ) { }
     public Student(String name, Integer age, String addr, Student gf) {
         this.name = name;
@@ -10,8 +12,6 @@ public class Student implements Serializable,Cloneable {
         this.addr = addr;
         this.gf = gf;
     }
-
-    private static final long serialVersionUID = 8703027563434375744L;
     private String name;//姓名
     private Integer age;//年龄
     private String addr;//地址
@@ -28,12 +28,7 @@ public class Student implements Serializable,Cloneable {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", addr='" + addr + '\'' +
-                ", gf=" + gf +
-                '}';
+        return "Student{name='" + name + '\'' + ", age=" + age + ", addr='" + addr + '\'' + ", gf=" + gf + '}';
     }
 
     //深克隆
@@ -58,8 +53,8 @@ public class Student implements Serializable,Cloneable {
         Student deeoCopy = (Student)xiaoming.deepClone();
         xiaoming.setName("小明同胞兄弟");
         gf.setName("小芳的闺蜜");
-        System.out.println(shallowCopy);
-        System.out.println(deeoCopy);
+        System.out.println(shallowCopy); //  Student{name='小明', age=18, addr='帝都', gf=Student{name='小芳的闺蜜', age=18, addr='帝都', gf=null}}
+        System.out.println(deeoCopy);    //  Student{name='小明', age=18, addr='帝都', gf=Student{name='小芳', age=18, addr='帝都', gf=null}}
 
     }
 }

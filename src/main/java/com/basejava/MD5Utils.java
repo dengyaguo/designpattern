@@ -1,12 +1,15 @@
 package com.basejava;
 
+import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSON;
+import org.springframework.util.CollectionUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.*;
 import java.util.Date;
+import java.util.Random;
 
 public class MD5Utils {
 
@@ -48,6 +51,11 @@ public class MD5Utils {
     }
 
     public static void main(String[] args) {
+
+        System.out.println("/bc/url/aaa".contains("/url/aaa"));
+        for (int i = 0; i < 1000; i++) {
+            System.out.println( new Random().nextDouble());
+        }
         Date date = new Date();
         LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(date.getTime()), ZoneId.systemDefault());
         LocalDateTime min = LocalDateTime.of( LocalDateTime.now().toLocalDate(), LocalTime.MIN);
@@ -56,7 +64,10 @@ public class MD5Utils {
 
         System.out.println(JSON.toJSONString(localDateTime.with( LocalTime.MIN)));
         System.out.println(JSON.toJSONString(localDateTime.with( LocalTime.MAX)));
-        System.err.println(MD5Utils.getMD5Str("aa123456"));
-    }
+        //System.err.println(MD5Utils.getMD5Str("JT583594"));//
+        System.err.println(MD5Utils.getMD5Str("123456abc"));//df10ef8509dc176d733d59549e7dbfaf
+        System.err.println(MD5Utils.getMD5Str("JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111091JT00001111084JT00001111095JT00001111096JT00001111097JT00001111098JT00001111099"));
+        System.out.println("d9627a7998af89e273fa105a8e78025b".length());
 
+    }
 }

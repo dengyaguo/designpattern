@@ -2,6 +2,8 @@ package com.executor;
 
 import java.util.ArrayList;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.Delayed;
 import java.util.concurrent.LinkedBlockingDeque;
 
 /**
@@ -29,5 +31,8 @@ public class QueueTest {
         LinkedBlockingDeque<String> linkedBlockingDeque = new LinkedBlockingDeque<>(10);
         linkedBlockingDeque.put("");
         linkedBlockingDeque.take();
+
+
+        DelayQueue<CustomDelayed> strings = new DelayQueue<CustomDelayed>();
     }
 }

@@ -18,6 +18,5 @@ public class ConditionTest {
         condition.await();
         condition.signal();
         reentrantLock.unlock();
-
     }
 }

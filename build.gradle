@@ -16,8 +16,10 @@ dependencies {
     implementation group: 'junit', name: 'junit', version: '4.12'
     implementation group: 'org.springframework', name: 'spring-context', version: '5.0.5.RELEASE'
     implementation group: 'com.google.guava', name: 'guava', version: '28.1-jre'
+    implementation group: 'com.github.rholder', name: 'guava-retrying', version: '2.0.0'
     implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.62'
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
     implementation group: 'cn.hutool', name: 'hutool-all', version: '4.5.10'
     implementation group: 'org.springframework', name: 'spring-core', version: '5.0.5.RELEASE'
+    implementation group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
 }

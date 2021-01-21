@@ -10,4 +10,9 @@ public class ConcreteTemplateA extends AbstractTemplate {
     void operation2() {
         System.out.println("A 操作2");
     }
+
+    @Override
+    void operation3() {
+
+    }
 }
