@@ -1,25 +1,21 @@
 package com.executor;
 
-import java.util.ArrayList;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.DelayQueue;
-import java.util.concurrent.Delayed;
 import java.util.concurrent.LinkedBlockingDeque;
 
 /**
- *     public ArrayBlockingQueue(int capacity, boolean fair) {
- *         if (capacity <= 0)
- *             throw new IllegalArgumentException();
- *         this.items = new Object[capacity];
- *         lock = new ReentrantLock(fair);
- *         notEmpty = lock.newCondition();
- *         notFull =  lock.newCondition();
- *     }
+ *  常见的出队和入队的方法
+ *    add 添加一个元素，如果队列已满，则抛出异常
+ *   remove 移除并返回队列头部的元素，如果队列已空，则抛出异常
+ *   peek 返回队列头部的元素，如果队列为空，则返回null
+ *   offer 添加元素，成功true，否则false
+ *   poll 返回头部元素，如果为空，则返回null
+ *   put 添加元素 ，如果队列已满，阻塞
+ *   take 移除并返回头部元素 ，如果队列已空，阻塞
  *
- * @Description: </br>
- * @Project: </br>
- * @CreateDate: Created in 2020-06-20  </br>
- * @Author: <a href="624976130@qq.com">buyi</a>
+ *
+ *
  */
 public class QueueTest {
     public static void main(String[] args) throws InterruptedException {
@@ -32,7 +28,10 @@ public class QueueTest {
         linkedBlockingDeque.put("");
         linkedBlockingDeque.take();
 
-
-        DelayQueue<CustomDelayed> strings = new DelayQueue<CustomDelayed>();
+        //todo  延迟队列
+        DelayQueue<CustomDelayed> delayQueue = new DelayQueue<CustomDelayed>();
+        delayQueue.offer(null);
+        delayQueue.poll();
+        delayQueue.take();
     }
 }
