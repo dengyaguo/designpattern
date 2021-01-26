@@ -1,4 +1,4 @@
-package com.executor;
+package com.lock;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;

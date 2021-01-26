@@ -1,10 +1,12 @@
-package com.executor;
+package com.lock;
 
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.LongAccumulator;
 import java.util.concurrent.atomic.LongAdder;
+import java.util.function.LongBinaryOperator;
 
 @Slf4j
 public class AtomicTest {
@@ -37,7 +39,18 @@ public class AtomicTest {
         LongAdder longAdder = new LongAdder();
         longAdder.increment();
         long l = longAdder.longValue();
-        //采用base加数组【transient volatile Cell[] cells】维护大小
 
+        //采用base加数组【transient volatile Cell[] cells】维护大小
+        LongBinaryOperator apply = AtomicTest::accumulatorFunction;
+        LongAccumulator longAccumulator = new LongAccumulator(apply,1l);
+        longAccumulator.accumulate(3);
+        long v1 = longAccumulator.get();
+        longAccumulator.accumulate(3);
+        long v2 = longAccumulator.get();
+        System.out.println("v1:"+ v1 +"   v2:"+ v2);//v1:3   v2:9
+    }
+
+    public static long accumulatorFunction(long left,long right){
+        return left * right;
     }
 }
