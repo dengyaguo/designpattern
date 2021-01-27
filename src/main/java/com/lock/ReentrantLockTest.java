@@ -5,8 +5,11 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReentrantLockTest<T> {
-
+    //重入锁【读写+锁】
     private final Lock lock = new ReentrantLock();
+
+
+    //读写锁  ，可以兼容多个读线程，写线程必须等待读写线程释放，独占
     private final ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
     private final Lock rlock = readWriteLock.readLock();
     private final Lock wlock = readWriteLock.writeLock();
