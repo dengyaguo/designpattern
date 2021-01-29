@@ -49,7 +49,7 @@ public class Student implements Serializable,Cloneable {
         Student xiaoming = new Student("小明", 18, "帝都", gf);
         //浅克隆
         Student shallowCopy = (Student)xiaoming.clone();
-        //浅克隆
+        //深克隆
         Student deeoCopy = (Student)xiaoming.deepClone();
         xiaoming.setName("小明同胞兄弟");
         gf.setName("小芳的闺蜜");
