@@ -6,7 +6,7 @@ public class MyLongMap  implements BitMap {
 
     private static final long MAX = Long.MAX_VALUE;
 
-    private static final int  MACHINE64 = 4096 * 128;
+    private static final int  MACHINE64 = 106666;
     private long[] longs = null;
 
     /**

@@ -17,6 +17,7 @@ public class BitTest {
 
 
     public static void main(String[] args) {
+        System.out.println(9999999999999l/93750000);
         compareSize();
     }
 

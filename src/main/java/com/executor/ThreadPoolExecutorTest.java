@@ -54,7 +54,8 @@ public class ThreadPoolExecutorTest {
         ExecutorService cachedExecutorService = Executors.newCachedThreadPool();
         ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(4);
-        ScheduledThreadPoolExecutor scheduledExecutorService = new ScheduledThreadPoolExecutor(1);
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(2);
+        //ScheduledThreadPoolExecutor scheduledExecutorService = new ScheduledThreadPoolExecutor(1);
         scheduledExecutorService.schedule(new Thread(),1,TimeUnit.SECONDS);
 
         ThreadPoolExecutor executor = new ThreadPoolExecutor(4, 4,

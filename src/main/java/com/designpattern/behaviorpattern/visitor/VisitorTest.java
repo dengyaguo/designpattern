@@ -2,6 +2,11 @@ package com.designpattern.behaviorpattern.visitor;
 
 /**
  * 访问者模式测试代码
+ *
+ *  visitor
+ *  accept(visitor)
+ *
+ *
  */
 public class VisitorTest {
     public static void main(String[] args) {
