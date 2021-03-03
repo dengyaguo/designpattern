@@ -19,19 +19,20 @@ import java.util.concurrent.LinkedBlockingDeque;
  */
 public class QueueTest {
     public static void main(String[] args) throws InterruptedException {
-        ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue<String>(10,true);
+/*        ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue<String>(10,true);
         arrayBlockingQueue.put("");
         arrayBlockingQueue.take();
 
 
         LinkedBlockingDeque<String> linkedBlockingDeque = new LinkedBlockingDeque<>(10);
         linkedBlockingDeque.put("");
-        linkedBlockingDeque.take();
+        linkedBlockingDeque.take();*/
 
         //todo  延迟队列
         DelayQueue<CustomDelayed> delayQueue = new DelayQueue<CustomDelayed>();
         delayQueue.offer(null);
         delayQueue.poll();
         delayQueue.take();
+        delayQueue.put(null);
     }
 }

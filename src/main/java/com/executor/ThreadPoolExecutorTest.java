@@ -55,9 +55,10 @@ public class ThreadPoolExecutorTest {
         ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(4);
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(2);
-        //ScheduledThreadPoolExecutor scheduledExecutorService = new ScheduledThreadPoolExecutor(1);
+        ScheduledThreadPoolExecutor stps = new ScheduledThreadPoolExecutor(1);
         scheduledExecutorService.schedule(new Thread(),1,TimeUnit.SECONDS);
-
+        //Java8  线程池
+        ExecutorService executorService = Executors.newWorkStealingPool();
         ThreadPoolExecutor executor = new ThreadPoolExecutor(4, 4,
                 0L, TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<>());
