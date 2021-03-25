@@ -6,14 +6,15 @@ public class MyLongMap  implements BitMap {
 
     private static final long MAX = Long.MAX_VALUE;
 
-    private static final int  MACHINE64 = 106666;
+    private static final int  MACHINE64 = 64;
     private long[] longs = null;
 
     /**
      * 构造
+     * 1亿数据，对象内存大小：119M
      */
     public MyLongMap() {
-        longs = new long[93750000];
+        longs = new long[15625000];
     }
 
     /**

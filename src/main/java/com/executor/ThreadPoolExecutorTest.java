@@ -1,5 +1,6 @@
 package com.executor;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.apache.commons.lang3.time.StopWatch;
 
 import java.util.concurrent.*;
@@ -59,12 +60,55 @@ public class ThreadPoolExecutorTest {
         scheduledExecutorService.schedule(new Thread(),1,TimeUnit.SECONDS);
         //Java8  线程池
         ExecutorService executorService = Executors.newWorkStealingPool();
-        ThreadPoolExecutor executor = new ThreadPoolExecutor(4, 4,
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 4,
                 0L, TimeUnit.MILLISECONDS,
-                new LinkedBlockingQueue<>());
-        Future<String> submit = executor.submit(() -> "game over");
-        executor.execute(() -> System.out.println("game over"));
-        submit.get();
+                new LinkedBlockingQueue<>(2), new ThreadFactoryBuilder()
+                .setNameFormat("测试-thread-%d")
+                .setDaemon(true)
+                .build());
+       // Future<String> submit = executor.submit(() -> "game over");
+        executor.execute(() -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("game over");});
+        executor.execute(() -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("game over");});
+        executor.execute(() -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("game over");});
+        executor.execute(() -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("game over");});
+        while (true){
+            int largestPoolSize = executor.getLargestPoolSize();
+            int activeCount = executor.getActiveCount();
+            int poolSize = executor.getPoolSize();
+            System.out.println("largestPoolSize："+largestPoolSize+"   poolSize："+poolSize+"   activeCount："+activeCount);
+            if (activeCount > 1){
+                System.out.println("超过core thread");
+            }else if(activeCount == 0){
+                System.out.println("等于0");
+            }else {
+                System.out.println("等于core thread");
+            }
+        }
+        //submit.get();
     }
 
 

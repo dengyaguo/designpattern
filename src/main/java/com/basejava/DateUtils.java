@@ -19,6 +19,7 @@ public class DateUtils {
         Duration duration = Duration.between(start,end);
         long millis = duration.toMillis();//相差毫秒数
         System.out.println(596399 / (1000 * 60));*/
+     test1();
 
     }
 
@@ -27,6 +28,11 @@ public class DateUtils {
     }
 
     private static void test1() {
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime start = now.minusDays(30);
+        System.out.println(now);
+        System.out.println(start);
+
         LocalDateTime toDateTime = LocalDateTime.of(2019, 9, 11, 7, 45, 55);
         LocalDateTime tempDateTime = LocalDateTime.of(2019, 9, 11, 7, 40, 45);
 
