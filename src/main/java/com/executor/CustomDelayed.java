@@ -8,13 +8,19 @@ public class CustomDelayed implements Delayed {
 
     private static final Random random = new Random();
 
+    private int delay;
+
+    public CustomDelayed(int delay) {
+        this.delay = delay;
+    }
+
     @Override
     public long getDelay(TimeUnit unit) {
-        return random.nextInt(10);
+        return delay;
     }
 
     @Override
     public int compareTo(Delayed o) {
-        return 0;
+        return this.getDelay(null)>o.getDelay(null)?1:0;
     }
 }

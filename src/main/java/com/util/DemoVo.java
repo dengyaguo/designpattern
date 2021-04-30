@@ -1,6 +1,7 @@
 package com.util;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.LongAdder;
 
 public class DemoVo<T,V> {
     public DemoVo() {
@@ -37,5 +38,9 @@ public class DemoVo<T,V> {
 
         ArrayList<Object> objects = new ArrayList<>();
         objects.add(null);
+
+        LongAdder preCostFailMonitor = new LongAdder();
+        preCostFailMonitor.increment();
+        System.out.println(preCostFailMonitor.longValue());
     }
 }

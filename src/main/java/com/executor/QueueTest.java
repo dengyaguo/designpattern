@@ -30,9 +30,16 @@ public class QueueTest {
 
         //todo  延迟队列
         DelayQueue<CustomDelayed> delayQueue = new DelayQueue<CustomDelayed>();
-        delayQueue.offer(null);
-        delayQueue.poll();
-        delayQueue.take();
-        delayQueue.put(null);
+        delayQueue.offer(new CustomDelayed(1));
+        delayQueue.offer(new CustomDelayed(2));
+        delayQueue.offer(new CustomDelayed(3));
+        delayQueue.offer(new CustomDelayed(4));
+        delayQueue.offer(new CustomDelayed(5));
+        delayQueue.offer(new CustomDelayed(6));
+        delayQueue.offer(new CustomDelayed(4));
+        delayQueue.offer(new CustomDelayed(8));
+
+
+
     }
 }
