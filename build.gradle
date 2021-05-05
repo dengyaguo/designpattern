@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'myDemo'
+group 'base-java'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -26,5 +26,6 @@ dependencies {
     implementation group: 'cn.hutool', name: 'hutool-all', version: '4.5.10'
     implementation group: 'org.springframework', name: 'spring-core', version: '5.0.5.RELEASE'
     implementation group: 'org.projectlombok', name: 'lombok', version: '1.16.20'
-    implementation group: 'org.openjdk.jol', name: 'jol-core', version: '0.13'
+    implementation group: 'org.openjdk.jol', name: 'jol-core', version: '0.13'/*内存分析*/
+    implementation group: 'org.roaringbitmap', name: 'RoaringBitmap', version: '0.9.0'/*压缩位图*/
 }

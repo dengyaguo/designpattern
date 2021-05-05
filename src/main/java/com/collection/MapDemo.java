@@ -14,11 +14,12 @@ public class MapDemo {
 
     public static void main(String[] args) {
 
+
         ConcurrentHashMap<Object, Object> concurrentHashMap = new ConcurrentHashMap<>();
         concurrentHashMap.put(null,null);
         concurrentHashMap.get(null);
 
-        Map<Object, Object> dataMap = new HashMap<>(17);
+        Map<Object, Object> dataMap = new HashMap<>(8);
         dataMap.put(null, null);
         dataMap.get(null);
         int i = tableSizeFor(333);

@@ -1,10 +1,13 @@
 package com.bit;
 
 import org.openjdk.jol.info.GraphLayout;
+import org.roaringbitmap.RoaringBitmap;
+import org.roaringbitmap.longlong.Roaring64NavigableMap;
 
 public class BitMapTest {
 
     public static void main(String[] args) {
+
         System.out.println(93750000*64);
         System.out.println(15625000*64);
         //1000000000
