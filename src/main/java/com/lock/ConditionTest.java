@@ -12,6 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ConditionTest {
     public static void main(String[] args) throws InterruptedException {
+
         ReentrantLock reentrantLock = new ReentrantLock();
         Condition condition = reentrantLock.newCondition();
         reentrantLock.lock();

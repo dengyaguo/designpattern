@@ -52,14 +52,20 @@ import java.util.concurrent.*;
  */
 public class ThreadPoolExecutorTest {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
+        //无核心线程，最大线程Integer.MAX_VALUE，60s回收，队列用的是SynchronousQueue
         ExecutorService cachedExecutorService = Executors.newCachedThreadPool();
+        //核心线程等于最大线程 没有超时回收，队列用的是LinkedBlockingQueue
         ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
+        //核心线程等于最大线程 没有超时回收，队列用的是LinkedBlockingQueue
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(4);
+        //延迟队列 DelayedWorkQueue  ，核心线程指定，最大线程Integer.MAX_VALUE
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(2);
         ScheduledThreadPoolExecutor stps = new ScheduledThreadPoolExecutor(1);
         scheduledExecutorService.schedule(new Thread(),1,TimeUnit.SECONDS);
         //Java8  线程池
         ExecutorService executorService = Executors.newWorkStealingPool();
+
+
         ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 4,
                 0L, TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<>(2), new ThreadFactoryBuilder()

@@ -8,18 +8,7 @@ import java.util.concurrent.*;
 public class CompletableFutureTest {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        ThreadPoolExecutor executorService = new ThreadPoolExecutor(4,4,1,
-                TimeUnit.MINUTES,new LinkedBlockingDeque<>(100), new NamedThreadFactory("test-thread",false),new ThreadPoolExecutor.CallerRunsPolicy());
-        for (int i = 0; i < 10; i++) {
-            int finalI = i;
-           new Thread(() -> {
-               try {
-                   test(finalI,executorService);
-               } catch (Exception e) {
-                   e.printStackTrace();
-               }
-           }).start();
-        }
+
     }
 
     public static void test(int i,ThreadPoolExecutor executorService) throws ExecutionException, InterruptedException {

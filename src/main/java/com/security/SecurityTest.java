@@ -34,7 +34,7 @@ public class SecurityTest {
         String sign = "";
         ReturnObject returnObject = new ReturnObject();
 
-        Map<String, Object> signMap = new ConcurrentHashMap<String, Object>();
+        Map<String, ObjectV> signMap = new ConcurrentHashMap<String, ObjectV>();
         signMap.put("idCard", "idCard");
         signMap.put("realName", "realName");
         signMap.put("phone", "phone");
@@ -67,7 +67,7 @@ public class SecurityTest {
         String sign = null;
         ReturnObject returnObject = new ReturnObject();
 
-        Map<String, Object> signMap = new ConcurrentHashMap<String, Object>();
+        Map<String, ObjectV> signMap = new ConcurrentHashMap<String, ObjectV>();
         signMap.put("idCard", "idCard");
         signMap.put("realName", "realName");
         signMap.put("phone", "phone");
@@ -106,7 +106,7 @@ public class SecurityTest {
     public void test4(){
         ReturnObject returnObject = new ReturnObject();
         String sign = null;
-        Map<String, Object> signMap = new ConcurrentHashMap<String, Object>();
+        Map<String, ObjectV> signMap = new ConcurrentHashMap<String, ObjectV>();
         signMap.put("idCard", "idCard");
         signMap.put("realName", "realName");
         signMap.put("phone", "phone");
@@ -120,7 +120,7 @@ public class SecurityTest {
         boolean flag = RSAUtils.doCheck(paramsStr, sign, "CLIENT_PUBLIC_KEY");
         System.out.println("-->公钥验签结果：" + flag);
 
-        Map<String, Object> responseParameterMap = new ConcurrentHashMap<String, Object>();
+        Map<String, ObjectV> responseParameterMap = new ConcurrentHashMap<String, ObjectV>();
         if (flag) {
             //签名通过，准备数据返回给调用者
             responseParameterMap.put("errorCode", "0");

@@ -37,10 +37,7 @@ public class MyLongMap  implements BitMap {
     public boolean contains(long i) {
         int r = (int) (i / MACHINE64);
         long c = i % MACHINE64;
-        if (((longs[r] >>> c) & 1) == 1) {
-            return true;
-        }
-        return false;
+        return ((longs[r] >>> c) & 1) == 1;
     }
 
     @Override

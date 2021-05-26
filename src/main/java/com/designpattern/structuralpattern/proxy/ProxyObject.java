@@ -1,7 +1,7 @@
 package com.designpattern.structuralpattern.proxy;
 
-public class ProxyObject implements Object{
-    private Object obj;
+public class ProxyObject implements ObjectV {
+    private ObjectV obj;
 
     public ProxyObject( ) {
         this.obj = new ObjectImpl();

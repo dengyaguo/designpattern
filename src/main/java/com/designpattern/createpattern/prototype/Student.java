@@ -32,7 +32,7 @@ public class Student implements Serializable,Cloneable {
     }
 
     //深克隆
-    public Object deepClone() throws IOException, OptionalDataException,
+    public Object deepClone() throws IOException,
             ClassNotFoundException {
         // 将对象写到流里
         ByteArrayOutputStream bo = new ByteArrayOutputStream();

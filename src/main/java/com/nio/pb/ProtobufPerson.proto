@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package com.buyi.nettylearn.protobuf;
+
+option java_package = "com.buyi.nettylearn.protobuf";
+option java_outer_classname = "PersonProto";
+
+message Person {
+  optional string name = 1;
+  optional int32 id = 2;
+  optional string email = 3;
+}

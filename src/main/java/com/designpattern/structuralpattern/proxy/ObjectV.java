@@ -1,5 +1,5 @@
 package com.designpattern.structuralpattern.proxy;
 
-public interface Object {
+public interface ObjectV {
     void action();
 }

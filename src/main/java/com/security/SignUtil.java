@@ -44,11 +44,8 @@ public class SignUtil {
 	 * @return
 	 */
 	public static boolean signValidator(String sign, String serverSign) {
-		if (StringUtils.equals(sign, serverSign)) {
-			return true;
-		}
-		return false;
-	}
+        return StringUtils.equals(sign, serverSign);
+    }
 	
 	/**
 	 * 动态签章请求参数时间戳验证
@@ -70,11 +67,8 @@ public class SignUtil {
 		Calendar end_calendar = Calendar.getInstance();
 		end_calendar.add(Calendar.MINUTE, 3);
 		Date end_Time = end_calendar.getTime();
-		
-		if (clientTime.before(start_Time) || clientTime.after(end_Time)) {
-			//时间戳过期
-			return false;
-		}
-		return true;
-	}
+
+        //时间戳过期
+        return !clientTime.before(start_Time) && !clientTime.after(end_Time);
+    }
 }

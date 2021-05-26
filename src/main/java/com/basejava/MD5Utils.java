@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import org.springframework.util.CollectionUtils;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.*;
@@ -23,14 +24,12 @@ public class MD5Utils {
 
             messageDigest.reset();
 
-            messageDigest.update(str.getBytes("UTF-8"));
+            messageDigest.update(str.getBytes(StandardCharsets.UTF_8));
 
         } catch (NoSuchAlgorithmException e) {
             System.out.println("NoSuchAlgorithmException caught!");
             e.printStackTrace();
             System.exit(-1);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
         }
 
         byte[] byteArray = messageDigest.digest();

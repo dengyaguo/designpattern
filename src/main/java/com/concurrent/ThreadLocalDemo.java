@@ -1,5 +1,6 @@
 package com.concurrent;
 
+import java.util.StringJoiner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -54,6 +55,15 @@ public class ThreadLocalDemo {
         threadLocal.set(null);
         threadLocal.get();
         threadLocal.remove();
+
+
+        StringJoiner stringJoiner = new StringJoiner("");
+        for (int i = 0; i < 20; i++) {
+            ThreadLocalDemo localDemo = new ThreadLocalDemo();
+            stringJoiner.add(String.valueOf(localDemo.threadLocalHashCode & 15) ).add(" ");
+        }
+        System.out.println(stringJoiner.toString());
+
     }
 }
 

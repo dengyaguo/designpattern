@@ -8,7 +8,7 @@ public class MyInvocationHander implements InvocationHandler {
     private Person person;
     public Object getInstance(Person target){
         this.person = target;
-      //  Object o = Proxy.newProxyInstance(this.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
+      //  ObjectV o = Proxy.newProxyInstance(this.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
 
         //自定义MyProxy和MyClassLoader类模拟jdk动态生成字节码的过程
         Object o = MyProxy.newProxyInstance(new MyClassLoader(), target.getClass().getInterfaces(), this);
