@@ -50,7 +50,11 @@ public class ThreadLocalDemo {
         return nextHashCode.getAndAdd(HASH_INCREMENT);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread = new Thread();
+        thread.join();
+        thread.join(10000);
+
         ThreadLocal<Object> threadLocal = new ThreadLocal<>();
         threadLocal.set(null);
         threadLocal.get();

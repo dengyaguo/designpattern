@@ -3,6 +3,11 @@ package com.entity;
 import java.time.LocalDateTime;
 
 public class User {
+    public static void main(String[] args) {
+        User user = new User();
+    }
+
+
     public User() {
     }
 

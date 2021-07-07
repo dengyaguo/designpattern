@@ -8,5 +8,7 @@ public class CyclicBarrierDemo {
     public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(5);
         cyclicBarrier.await();
+
+
     }
 }
