@@ -42,5 +42,7 @@ public class DemoVo<T,V> {
         LongAdder preCostFailMonitor = new LongAdder();
         preCostFailMonitor.increment();
         System.out.println(preCostFailMonitor.longValue());
+
+
     }
 }
