@@ -6,8 +6,6 @@ public class CommonSort {
 
 
     public static void main(String[] args) {
-
-
         int[] target = {1, 9, 7, 5, 3};
         bubbleSort(target);
         printInfo("冒泡",target);
