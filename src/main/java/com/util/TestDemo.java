@@ -23,9 +23,7 @@ public class TestDemo {
         System.out.println(ss.charAt(10));
 
 
-
-
-
+        System.out.println("pick2");
 
 
 
