@@ -23,10 +23,9 @@ public class TestDemo {
         System.out.println(ss.charAt(10));
 
 
-        System.out.println("pick2");
 
 
-        System.out.println("rebase1");
+        System.out.println("reset 4");
 
 
 

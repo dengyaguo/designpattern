@@ -12,6 +12,8 @@ public class Base64Utils {
 
 	public static void main(String[] args) {
 		System.out.println();
+
+        System.out.println("reset 2");
 	}
 
 	/**

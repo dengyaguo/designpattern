@@ -17,5 +17,7 @@ public class MyDemo {
         System.out.println(length.multiply(wide).multiply(high).divide(new BigDecimal(8000), 2, RoundingMode.UP));
         System.out.println("" + "" + "");
         System.out.println(StringUtils.isNotBlank("" + "" + ""));
+
+        System.out.println("reset 3");
     }
 }
