@@ -15,6 +15,10 @@ public class CollectionDemo {
         test.test1();
         test.test2();
 
+        System.out.println(
+                "master 23:30"
+        );
+
     }
 
 
