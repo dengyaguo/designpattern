@@ -12,6 +12,8 @@ public class Demo {
 
 
         System.out.println("reset yuan master");
+
+        System.out.println("master 23:01");
     }
 
 }
