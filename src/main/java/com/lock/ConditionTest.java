@@ -21,6 +21,6 @@ public class ConditionTest {
         reentrantLock.unlock();
 
 
-        System.out.println("master 23:26");
+        System.out.println("master 23:28");
     }
 }
