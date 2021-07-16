@@ -68,7 +68,9 @@ public class SignUtil {
 		end_calendar.add(Calendar.MINUTE, 3);
 		Date end_Time = end_calendar.getTime();
 
-        //时间戳过期
+
+        System.out.println("rebase 23:04");
+		        //时间戳过期
         return !clientTime.before(start_Time) && !clientTime.after(end_Time);
     }
 }
