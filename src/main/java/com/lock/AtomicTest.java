@@ -48,6 +48,8 @@ public class AtomicTest {
         longAccumulator.accumulate(3);
         long v2 = longAccumulator.get();
         System.out.println("v1:"+ v1 +"   v2:"+ v2);//v1:3   v2:9
+
+        System.out.println("rebase 23:02");
     }
 
     public static long accumulatorFunction(long left,long right){
