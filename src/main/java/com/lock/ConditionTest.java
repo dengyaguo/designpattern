@@ -19,5 +19,8 @@ public class ConditionTest {
         condition.await();
         condition.signal();
         reentrantLock.unlock();
+
+
+        System.out.println("master 23:26");
     }
 }
