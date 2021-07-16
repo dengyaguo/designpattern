@@ -14,6 +14,8 @@ public class StampedLockTest {
         StampedLockTest test = new StampedLockTest();
         test.write();
         test.read();
+
+        System.out.println("rebase 23:29");
     }
 
 
