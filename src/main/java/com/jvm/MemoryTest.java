@@ -20,6 +20,11 @@ public class MemoryTest {
         System.out.println("查看对象外部信息：包括引用的对象：" +GraphLayout.parseInstance(o).toPrintable());
         /*          System.out.println("对象内存大小：" + GraphLayout.parseInstance(o).totalSize()/1024/1024);*/
         TimeUnit.SECONDS.sleep(50000);
+
+        System.out.println("我的天空 ");
+        System.out.println("天空之城在哭泣 ");
+
+        System.out.println("cherry -pick ");
     }
 
 }
