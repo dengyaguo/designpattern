@@ -8,6 +8,7 @@ import java.math.RoundingMode;
  *
  */
 public class MyDemo {
+
     public static void main(String[] args) {
         BigDecimal length = new BigDecimal(9.99);
         BigDecimal wide = new BigDecimal(10);
@@ -20,4 +21,5 @@ public class MyDemo {
 
         System.out.println("reset 3");
     }
+
 }

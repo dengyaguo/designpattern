@@ -1,10 +1,8 @@
 package com.basejava;
 
-import cn.hutool.core.io.IoUtil;
-import sun.misc.IOUtils;
-
-import java.io.*;
-import java.nio.channels.FileChannel;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.PushbackInputStream;
 
 public class IOUtil {
 
@@ -30,7 +28,7 @@ public class IOUtil {
 
                 temp = push.read();
 
-                System.out.print("(»ØÍË" + (char) temp + ") ");
+                System.out.print(" " + (char) temp + ") ");
 
             }else{
 

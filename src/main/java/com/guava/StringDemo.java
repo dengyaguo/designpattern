@@ -11,5 +11,7 @@ public class StringDemo {
         String demo2 = Strings.padEnd("demo", 5, '1');
         String s = Strings.lenientFormat("%s12313%s", "start", "end");
         System.out.println(demo1 + "   " + demo2 + "  " +  s);
+
+
     }
 }

@@ -1,0 +1,17 @@
+*.classpath
+*.project
+*.prefs
+**/out/
+.idea/
+/.gradle/
+*.log
+*.0
+#*.yml
+*.iml
+/**/build
+gradle
+gradlew
+gradlew.bat
+log
+.settings
+*.class

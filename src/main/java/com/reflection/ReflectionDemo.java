@@ -1,20 +1,10 @@
 package com.reflection;
 
 import cn.hutool.core.io.FileUtil;
-import cn.hutool.http.HttpRequest;
-import cn.hutool.http.HttpResponse;
-import cn.hutool.http.HttpUtil;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.google.common.base.Splitter;
-import com.google.common.collect.Lists;
-import com.sun.deploy.net.HttpUtils;
-import org.apache.commons.lang3.StringUtils;
 
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ReflectionDemo {
 
